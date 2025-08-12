@@ -21,7 +21,7 @@ const Login = ({ handleLogin }) => {
         <div className="flex items-center justify-center min-h-screen bg-gray-50">
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
-                    <h2 className="text-3xl font-extrabold text-gray-900">HR Management</h2>
+                    <h2 className="text-3xl font-extrabold text-gray-900">Penilaian Karyawan Terbaik</h2>
                     <p className="mt-2 text-sm text-gray-600">Silakan masuk dengan akun Anda</p>
                 </div>
                 {error && (
@@ -30,7 +30,7 @@ const Login = ({ handleLogin }) => {
                     </div>
                 )}
                 <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-                    <div className="space-y-4 rounded-md shadow-sm">
+                    <div className="space-y-4 ">
                         <div>
                             <label htmlFor="username" className="block text-sm font-medium text-gray-700">
                                 Username

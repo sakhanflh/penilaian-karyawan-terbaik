@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = ({ sidebarOpen, setSidebarOpen, handleLogout }) => {
     return (
         <div className="bg-white shadow-md w-64 h-full">
-            <div className="flex items-center justify-between h-16 px-4 border-b border-gray-200">
+            <div className="flex items-center justify-between h-20 px-4 border-b border-gray-200">
                 <h1 className="text-xl font-semibold text-blue-600">Tearas Kupu</h1>
                 {/* Hamburger button for mobile - only visible when sidebar is open */}
                 <button
