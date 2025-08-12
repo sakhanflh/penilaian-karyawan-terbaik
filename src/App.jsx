@@ -7,6 +7,7 @@ import Dashboard from './pages/Dashboard';
 import DataKaryawan from './pages/DataKaryawan';
 import Penilaian from './pages/Penilaian';
 import Login from './pages/Login';
+import WithSidebar from './components/layouts/WithSidebar';
 
 
 function App() {
@@ -31,24 +32,23 @@ function App() {
         <main className={`flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-4 transition-all duration-300 ${sidebarOpen ? 'lg:ml-64' : 'lg:ml-0'
           }`}>
           <Routes>
-            <Route path="/login" element={
-              isAuthenticated ? <Navigate to="/" /> : <Login handleLogin={handleLogin} />
-            } />
-            <Route path="/" element={
+            {/* Route untuk login (tanpa sidebar) */}
+            <Route path="/login" element={<Login handleLogin={handleLogin} />} />
+
+            {/* Route dengan sidebar */}
+            <Route element={
               <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Dashboard />
+                <WithSidebar
+                  sidebarOpen={sidebarOpen}
+                  setSidebarOpen={setSidebarOpen}
+                  handleLogout={handleLogout}
+                />
               </PrivateRoute>
-            } />
-            <Route path="/data-karyawan" element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <DataKaryawan />
-              </PrivateRoute>
-            } />
-            <Route path="/penilaian" element={
-              <PrivateRoute isAuthenticated={isAuthenticated}>
-                <Penilaian />
-              </PrivateRoute>
-            } />
+            }>
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/data-karyawan" element={<DataKaryawan />} />
+              <Route path="/penilaian" element={<Penilaian />} />
+            </Route>
           </Routes>
         </main>
       </div>
