@@ -18,7 +18,7 @@ const Login = ({ handleLogin }) => {
     };
 
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-50">
+        <div className="flex items-center justify-center lg:mt-10 mt-20 bg-gray-50">
             <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-md">
                 <div className="text-center">
                     <h2 className="text-3xl font-extrabold text-gray-900">Penilaian Karyawan Terbaik</h2>
